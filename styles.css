@@ -9,6 +9,7 @@ body {
     color: #333;
     background-color: #fff;
     padding: 20px;
+    margin: auto;
 }
 
 header {
@@ -46,11 +47,15 @@ h1 {
 
 .ebook-content {
     max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
 }
 
 h2 {
-    font-size: 28px;
-    font-weight: 700;
+    font-size: 32px;
+    font-weight: bold;
     color: #000;
     margin-bottom: 20px;
 }
@@ -77,7 +82,7 @@ h2 {
 }
 
 p {
-    font-size: 16px;
+    font-size: 20px;
     line-height: 1.6;
     margin-bottom: 15px;
 }
@@ -105,23 +110,29 @@ p {
 }
 
 .form-text {
-    max-width: 50%;
+    max-width: 40%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .form-text h3 {
-    font-size: 24px;
+    font-size: 32px;
     font-weight: bold;
     color: #000;
     margin-bottom: 20px;
 }
 
 .form-text span {
+    /* font-size: 28px; */
     color: #28a745;
     font-weight: bold;
 }
 
 .form-text p {
-    font-size: 16px;
+    font-size: 24px;
     line-height: 1.6;
     color: #333;
 }
@@ -158,7 +169,7 @@ p {
 
 .checkbox-group {
     display: flex;
-    align-items: center;
+    align-items: start;
     margin-bottom: 20px;
 }
 
@@ -187,7 +198,8 @@ p {
 }
 
 .info-container {
-    max-width: 1000px; /* Adjusted to match previous section */
+    max-width: 1000px;
+    /* Adjusted to match previous section */
     margin: 0 auto;
 }
 
@@ -197,7 +209,7 @@ p {
 }
 
 .info-header h2 {
-    font-size: 24px;
+    font-size: 32px;
     font-weight: bold;
     margin-bottom: 20px;
     color: #000;
@@ -216,7 +228,8 @@ p {
     display: flex;
     justify-content: space-between;
     gap: 20px;
-    flex-wrap: wrap; /* Makes it responsive */
+    flex-wrap: wrap;
+    /* Makes it responsive */
 }
 
 .card {
@@ -225,7 +238,8 @@ p {
     padding: 20px;
     text-align: left;
     flex: 1;
-    min-width: 300px; /* Ensures cards maintain width */
+    min-width: 300px;
+    /* Ensures cards maintain width */
 }
 
 .card img {
@@ -320,99 +334,131 @@ body {
 
 
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Fixed position to keep it in view */
-    z-index: 1000; /* Ensures it appears above other content */
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Fixed position to keep it in view */
+    z-index: 1000;
+    /* Ensures it appears above other content */
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enables scrolling if needed */
-    background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent background */
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enables scrolling if needed */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Semi-transparent background */
 }
 
 .modal-content {
-    background-color: #fefefe; /* Light background for content */
-    margin: auto; /* Center horizontally */
-    padding: 20px; /* Inner spacing */
-    border: 1px solid #888; /* Subtle border */
+    background-color: #fefefe;
+    /* Light background for content */
+    margin: auto;
+    /* Center horizontally */
+    padding: 20px;
+    /* Inner spacing */
+    border: 1px solid #888;
+    /* Subtle border */
     border-radius: 3%;
     padding: 44px;
-    
-   
-    min-height: 46px ;
-    max-width: 70%; /* Maximum width limit */
-    text-align: center; /* Centered text alignment */
+
+
+    min-height: 46px;
+    max-width: 70%;
+    /* Maximum width limit */
+    text-align: center;
+    /* Centered text alignment */
 
     /* Centering using transform */
-    position: absolute; /* Use absolute positioning for centering */
-    top: 50%; 
+    position: absolute;
+    /* Use absolute positioning for centering */
+    top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); /* Move it back by half its height and width */
+    transform: translate(-50%, -50%);
+    /* Move it back by half its height and width */
 }
 
 .close {
-    color: #aaa; /* Default color for close button */
-    position: absolute; /* Positioning absolute to place it in the corner */
-    top: 10px; /* Distance from the top */
-    right: 15px; /* Distance from the right */
-    font-size: 28px; /* Size of the close icon */
+    color: #aaa;
+    /* Default color for close button */
+    position: absolute;
+    /* Positioning absolute to place it in the corner */
+    top: 10px;
+    /* Distance from the top */
+    right: 15px;
+    /* Distance from the right */
+    font-size: 28px;
+    /* Size of the close icon */
     font-weight: bold;
-    cursor: pointer; /* Indicates clickable element */
+    cursor: pointer;
+    /* Indicates clickable element */
 }
+
 .close:hover,
 .close:focus {
-    color: black; /* Changes color on hover/focus for better visibility */
+    color: black;
+    /* Changes color on hover/focus for better visibility */
 }
 
 .modal-icon {
-    width: 50px; 
-    height: 50px; 
-    margin-bottom: 20px; /* Spacing below the icon */
+    width: 50px;
+    height: 50px;
+    margin-bottom: 20px;
+    /* Spacing below the icon */
 }
 
 .modal-title {
     font-size: 30px;
-    font-weight: bold; 
-    margin-bottom: 10px; 
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
 .modal-subtitle {
-    font-size: 16px; 
+    font-size: 16px;
     margin-bottom: 20px;
 }
 
 .modal-input {
-    width: 100%; 
+    width: 100%;
     padding: 10px;
     margin-bottom: 20px;
-    box-sizing: border-box; /* Includes padding in total width/height */
-    border: 1px solid #ccc; 
-    border-radius: 5px; 
+    box-sizing: border-box;
+    /* Includes padding in total width/height */
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
 .modal-button {
-   background-color: #28a745; /* Green background for action button */
-   color: white;
-   padding: 10px 20px;
-   border: none;
-   cursor: pointer;
-   width: 100%; 
-   border-radius: 50px; /* Rounded button edges */
-   font-weight: bold;
+    background-color: #28a745;
+    /* Green background for action button */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 50px;
+    /* Rounded button edges */
+    font-weight: bold;
 }
+
 .modal-button:hover {
-   background-color: #218838; /* Darker green on hover */
+    background-color: #218838;
+    /* Darker green on hover */
 }
+
 @media only screen and (max-width: 600px) {
-    .ebook-section{
+    .ebook-section {
         flex-direction: column;
         justify-content: center;
     }
-    .ebook-content{
+
+    .ebook-content {
         text-align: center;
     }
-    .form-container{
+
+    .form-container {
         flex-direction: column;
         width: 100%;
         justify-content: center;
@@ -421,10 +467,19 @@ body {
         padding: 0;
 
     }
-    .form-text{
+
+    .form-text {
         max-width: 100%;
     }
-    .form-fields{
+
+    .form-fields {
         max-width: 100%;
     }
-  }
+
+    .button {
+        display: flex;
+        margin: auto;
+        justify-content: center;
+
+    }
+}
