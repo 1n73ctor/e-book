@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log({formData})
 
         // Send email via EmailJS
-        emailjs.send("service_zykkp3i", "template_ea1y5tu", formData)
+        emailjs.send("service_os2hu8e", "template_ea1y5tu", formData)
             .then(function(response) {
                 alert("Your ebook has been sent to your email!");
                 console.log("Email sent successfully", response.status, response.text);
@@ -30,10 +30,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Modal JavaScript
 var modal = document.getElementById("ebookModal");
-var btn = document.getElementById("cta-button");
+var btn = document.querySelector("#cta-button");
+var btn1 = document.querySelector("#cta-button1");
 var span = document.getElementsByClassName("close")[0];
 
 btn.onclick = function(e) {
+    console.log('wroking');
+    
+   e.preventDefault(); // Prevent the default anchor behavior
+   modal.style.display = "block"; // Show the modal
+}
+btn1.onclick = function(e) {
+    console.log('wroking');
+    
    e.preventDefault(); // Prevent the default anchor behavior
    modal.style.display = "block"; // Show the modal
 }
