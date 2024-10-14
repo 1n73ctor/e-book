@@ -2,7 +2,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("cryptoForm");
 
-    form.addEventListener("submit", function(event) {
+    form.addEventListener("submit", function (event) {
         event.preventDefault();
 
         // Collect form data
@@ -12,20 +12,46 @@ document.addEventListener("DOMContentLoaded", () => {
             email: document.getElementById("email").value
         };
 
-        console.log({formData})
+        console.log({ formData })
 
         // Send email via EmailJS
-        emailjs.send("service_os2hu8e", "template_ea1y5tu", formData)
-            .then(function(response) {
+        emailjs.send("service_30pk9yj", "template_8ozm8vw", formData)
+            .then(function (response) {
                 alert("Your ebook has been sent to your email!");
                 console.log("Email sent successfully", response.status, response.text);
-            }, function(error) {
+                document.getElementById("cryptoForm").reset();
+
+            }, function (error) {
                 console.error("Failed to send email:", error);
                 alert("There was an error sending your ebook. Please try again.");
             });
+
     });
 });
 
+// document.addEventListener("DOMContentLoaded", () => {
+
+// const butn = document.getElementById('button');
+
+// document.getElementById('cryptoForm')
+//  .addEventListener('submit', function(event) {
+//    event.preventDefault();
+
+// //    butn.value = 'Sending...';
+
+//    const serviceID = 'service_tdk1l4p';
+//    const templateID = 'template_3s1hjo6';
+
+//    emailjs.sendForm(serviceID, templateID, this)
+//     .then(() => {
+//         butn.value = 'Send Email';
+//       alert('Sent!');
+//     }, (err) => {
+//         butn.value = 'Send Email';
+//       alert(JSON.stringify(err));
+//     });
+// });
+// })
 
 
 // Modal JavaScript
@@ -34,38 +60,38 @@ var btn = document.querySelector("#cta-button");
 var btn1 = document.querySelector("#cta-button1");
 var span = document.getElementsByClassName("close")[0];
 
-btn.onclick = function(e) {
+btn.onclick = function (e) {
     console.log('wroking');
-    
-   e.preventDefault(); // Prevent the default anchor behavior
-   modal.style.display = "block"; // Show the modal
+
+    e.preventDefault(); // Prevent the default anchor behavior
+    modal.style.display = "block"; // Show the modal
 }
-btn1.onclick = function(e) {
+btn1.onclick = function (e) {
     console.log('wroking');
-    
-   e.preventDefault(); // Prevent the default anchor behavior
-   modal.style.display = "block"; // Show the modal
+
+    e.preventDefault(); // Prevent the default anchor behavior
+    modal.style.display = "block"; // Show the modal
 }
 
-span.onclick = function() {
-   modal.style.display = "none"; // Hide the modal when close button is clicked
+span.onclick = function () {
+    modal.style.display = "none"; // Hide the modal when close button is clicked
 }
 
-window.onclick = function(event) {
-   if (event.target == modal) { // Close modal if clicked outside of it
-       modal.style.display = "none";
-   }
+window.onclick = function (event) {
+    if (event.target == modal) { // Close modal if clicked outside of it
+        modal.style.display = "none";
+    }
 }
 
 // Close modal on Esc key press
-document.addEventListener('keydown', function(event) {
-   if (event.key === "Escape") { // Close modal with Escape key
-       modal.style.display = "none";
-   }
+document.addEventListener('keydown', function (event) {
+    if (event.key === "Escape") { // Close modal with Escape key
+        modal.style.display = "none";
+    }
 });
 
 // Handle form submission
-document.querySelector('.modal-button').addEventListener('click', function() {
+document.querySelector('.modal-button').addEventListener('click', function () {
     var email = document.querySelector('.modal-input').value;
     if (email) {
         // Here you would typically send the email to your server or email service
