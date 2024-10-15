@@ -1,57 +1,61 @@
 
 document.addEventListener("DOMContentLoaded", () => {
-    const form = document.getElementById("cryptoForm");
+    document.getElementById('cryptoForm').addEventListener('submit', async (e) => {
+        e.preventDefault();
 
-    form.addEventListener("submit", function (event) {
-        event.preventDefault();
+        const formData = new FormData(e.target);
+        const data = Object.fromEntries(formData.entries());
 
-        // Collect form data
-        const formData = {
-            name: document.getElementById("name").value,
-            phone: document.getElementById("phone").value,
-            email: document.getElementById("email").value
-        };
-
-        console.log({ formData })
-
-        // Send email via EmailJS
-        emailjs.send("service_30pk9yj", "template_8ozm8vw", formData)
-            .then(function (response) {
-                alert("Your ebook has been sent to your email!");
-                console.log("Email sent successfully", response.status, response.text);
-                document.getElementById("cryptoForm").reset();
-
-            }, function (error) {
-                console.error("Failed to send email:", error);
-                alert("There was an error sending your ebook. Please try again.");
+        try {
+            const response = await fetch('http://localhost:3000/api', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data),
             });
 
+            if (response.ok) {
+                alert("Form submitted successfully! Check your email for the eBook link.");
+                document.getElementById("cryptoForm").reset();
+
+            } else {
+                throw new Error('Failed to submit form.');
+            }
+        } catch (error) {
+            console.error(error);
+            document.getElementById('responseMessage').innerText =
+                'An error occurred. Please try again.';
+        }
     });
 });
-
 // document.addEventListener("DOMContentLoaded", () => {
+//     const form = document.getElementById("cryptoForm");
 
-// const butn = document.getElementById('button');
+//     form.addEventListener("submit", function (event) {
+//         event.preventDefault();
 
-// document.getElementById('cryptoForm')
-//  .addEventListener('submit', function(event) {
-//    event.preventDefault();
+//         // Collect form data
+//         const formData = {
+//             name: document.getElementById("name").value,
+//             phone: document.getElementById("phone").value,
+//             email: document.getElementById("email").value
+//         };
 
-// //    butn.value = 'Sending...';
+//         console.log({ formData })
 
-//    const serviceID = 'service_tdk1l4p';
-//    const templateID = 'template_3s1hjo6';
+//         // Send email via EmailJS
+//         emailjs.send("service_30pk9yj", "template_8ozm8vw", formData)
+//             .then(function (response) {
+//                 alert("Your ebook has been sent to your email!");
+//                 console.log("Email sent successfully", response.status, response.text);
+//                 document.getElementById("cryptoForm").reset();
 
-//    emailjs.sendForm(serviceID, templateID, this)
-//     .then(() => {
-//         butn.value = 'Send Email';
-//       alert('Sent!');
-//     }, (err) => {
-//         butn.value = 'Send Email';
-//       alert(JSON.stringify(err));
+//             }, function (error) {
+//                 console.error("Failed to send email:", error);
+//                 alert("There was an error sending your ebook. Please try again.");
+//             });
+
 //     });
 // });
-// })
 
 
 // Modal JavaScript
