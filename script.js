@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const data = Object.fromEntries(formData.entries());
 
         try {
-            const response = await fetch('http://localhost:8888/.netlify/functions/fetch', {
+            const response = await fetch('https://freecryptoacademy.com/.netlify/functions/fetch', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(data),
