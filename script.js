@@ -2,12 +2,14 @@
 document.addEventListener("DOMContentLoaded", () => {
     document.getElementById('cryptoForm').addEventListener('submit', async (e) => {
         e.preventDefault();
+        const submitButton = document.getElementById('btn-submit');
+        submitButton.textContent = 'Sending email'; // Change button text
 
         const formData = new FormData(e.target);
         const data = Object.fromEntries(formData.entries());
 
         try {
-            const response = await fetch('http://localhost:3000/api', {
+            const response = await fetch('http://localhost:8888/.netlify/functions/fetch', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(data),
@@ -25,6 +27,9 @@ document.addEventListener("DOMContentLoaded", () => {
             document.getElementById('responseMessage').innerText =
                 'An error occurred. Please try again.';
         }
+        setTimeout(() => {
+            submitButton.textContent = 'Submit'; // Reset button text
+        }, 0);
     });
 });
 // document.addEventListener("DOMContentLoaded", () => {
